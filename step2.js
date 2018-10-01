@@ -12,15 +12,15 @@ function getAndPrintHTML () {
   https.get(requestOptions, function (response){
     var string = " ";
 
-  response.on("data", function (chunk) {
-    var part = chunk.toString();
+  response.on("data", function (buffer) {
+    var part = buffer.toString();
     string += part;
-    console.log("this is a chunk:", chunk.toString(), "\n");
+    //console.log("this is a chunk:", chunk.toString(), "\n");
   });
 
 
   response.on('end', function() {
-      console.log(string);
+      console.log('end', string);
   });
 
 });
