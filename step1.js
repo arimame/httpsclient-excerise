@@ -10,7 +10,7 @@ function  getAndPrintHTMLChunks() {
 https.get(requestOptions, function (response){
 
 response.on("data", function (chunk) {
-  console.log(chunk.toString() + "/n");
+  console.log("this is a chunk:", chunk.toString(), "\n");
 })
 
 
